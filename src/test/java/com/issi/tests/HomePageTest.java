@@ -3,6 +3,8 @@ package com.issi.tests;
 import com.issi.pages.PSMSHomePage;
 import org.testng.annotations.Test;
 
+import java.util.Map;
+
 public final class HomePageTest extends BaseTest {
     /**
      * We have made HomePageTest class as final and created
@@ -13,13 +15,15 @@ public final class HomePageTest extends BaseTest {
     }
 
     @Test
-    public void masterModuleTest() {
+    public void masterModuleTest(Map<String,String> data) {
        new PSMSHomePage()
                .clickOnMastermodulebtn()
                .clickOnClientTypeslink()
                .clickOnAddRecordBtn()
-               .enterClientTypeText()
-               .clickOnCloseBtn();
+               .enterClientTypeText(data.get("clienttype"))
+                .enterDescriptiontext(data.get("descriptiontext"))
+               .clickOnSaveChangesBtn();
+            //   .clickOnCloseBtn();
     }
 
 }

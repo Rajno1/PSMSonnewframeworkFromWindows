@@ -2,6 +2,7 @@ package com.issi.listeners;
 
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.issi.reports.EmailReportWithAttachment;
 import com.issi.reports.ExtentLogger;
 import com.issi.reports.ExtentReport;
 import org.testng.*;
@@ -17,6 +18,7 @@ public class listenerClass implements ITestListener, ISuiteListener {
     @Override
     public void onFinish(ISuite suite) {
         ExtentReport.flushReports();
+        EmailReportWithAttachment.mailTheReport();
     }
 
     @Override

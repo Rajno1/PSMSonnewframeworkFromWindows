@@ -3,8 +3,8 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="com.issi.listeners.listenerClass"/>
-      <!-- <listener class-name="com.issi.listeners.MethodInterceptor"/> --> <!--it will execute only sepcified testcase-->
-     <!--   <listener class-name="com.issi.listeners.AnnotationTransformer"/> -->
+       <listener class-name="com.issi.listeners.MethodInterceptor"/>  <!--it will execute only sepcified testcase-->
+       <listener class-name="com.issi.listeners.AnnotationTransformer"/>
     </listeners>
 
     <test verbose="1" parallel="methods" preserve-order="true" name="Test">

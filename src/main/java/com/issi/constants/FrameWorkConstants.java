@@ -24,7 +24,7 @@ public final class FrameWorkConstants {
     private static final String CONFIGFILEPATH = TESTRESOURCESPATH + "/config/config.properties";
     private static final String EXTENTREPORTFOLDERPATH = System.getProperty("user.dir") + "/Extent-test-output/";
     private static final String RUNMANAGERSHEET = "RunManager";
-    private static final String ITERATIONDATASHEET = "DATA";
+    private static final String ITERATIONDATASHEET = "TestData";
 
     public static String getRunManagerSheet() {
         return RUNMANAGERSHEET;
@@ -38,7 +38,7 @@ public final class FrameWorkConstants {
     private static final String SPARKCONFIGFILEPATH = MAINRESOURCEPATH + "/spark-config.xml";
     private static final String CONFIGJSONFILEPATH = TESTRESOURCESPATH + "/jsons/config.json";
     private static final String CONFIG2JSONFILEPATH = TESTRESOURCESPATH + "/jsons/config2.json";
-    private static final int EXPLICITWAIT = 10;
+    private static final int EXPLICITWAIT = 12;
 
 
     public static String getExtentReportFilePath() {
