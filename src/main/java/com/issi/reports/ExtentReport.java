@@ -5,6 +5,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.ViewName;
 import com.issi.constants.FrameWorkConstants;
+import com.issi.enums.ConfigProperties;
+import com.issi.utils.PropertyUtils;
 
 import java.awt.*;
 import java.io.File;
@@ -55,7 +57,9 @@ public final class ExtentReport {
     }
 
     public static void createExtentTest(String testcasename){
-       ExtentTest test = extent.createTest(testcasename,"Started working on "+testcasename+"");
+       ExtentTest test = extent.createTest(testcasename,"Started working on "+testcasename+"")
+               .assignAuthor(PropertyUtils.getValue(ConfigProperties.AUTHOR))
+               .assignDevice(PropertyUtils.getValue(ConfigProperties.BROWSER));
        ExtentManager.setExtentTest(test);
     }
 }

@@ -1,5 +1,6 @@
 package com.issi.tests;
 
+import com.issi.pages.PSMSHomePage;
 import org.testng.annotations.Test;
 
 public final class HomePageTest extends BaseTest {
@@ -12,13 +13,13 @@ public final class HomePageTest extends BaseTest {
     }
 
     @Test
-    public void demoTest() {
-        System.out.println("Demo Test");
-//            new OrangeHRMHomePage()
-//                    .cickAdminModule()
-//                    .cickUserManagementLink()
-//                    .enterUsernametoseach()
-//                    .cickOnSearchBtn();
+    public void masterModuleTest() {
+       new PSMSHomePage()
+               .clickOnMastermodulebtn()
+               .clickOnClientTypeslink()
+               .clickOnAddRecordBtn()
+               .enterClientTypeText()
+               .clickOnCloseBtn();
     }
 
 }

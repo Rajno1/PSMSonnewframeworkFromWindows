@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="com.issi.listeners.listenerClass"/>
-       <listener class-name="com.issi.listeners.MethodInterceptor"/>  <!--it will execute only sepcified testcase-->
+      <!-- <listener class-name="com.issi.listeners.MethodInterceptor"/> --> <!--it will execute only sepcified testcase-->
      <!--   <listener class-name="com.issi.listeners.AnnotationTransformer"/> -->
     </listeners>
 
