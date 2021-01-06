@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.issi.listeners.listenerClass"/>
+       <listener class-name="com.issi.listeners.MethodInterceptor"/>  <!--it will execute only sepcified testcase-->
+     <!--   <listener class-name="com.issi.listeners.AnnotationTransformer"/> -->
+    </listeners>
+
+    <test verbose="1" parallel="methods" preserve-order="true" name="Test">
+        <classes>
+            <class name="com.issi.tests.HomePageTest"></class>
+        </classes>
+    </test>
+</suite>
