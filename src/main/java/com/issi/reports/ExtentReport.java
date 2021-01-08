@@ -7,9 +7,12 @@ import com.aventstack.extentreports.reporter.configuration.ViewName;
 import com.issi.constants.FrameWorkConstants;
 import com.issi.enums.ConfigProperties;
 import com.issi.utils.PropertyUtils;
+import com.itextpdf.html2pdf.HtmlConverter;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -17,10 +20,10 @@ public final class ExtentReport {
     private static ExtentReports extent;
     private static ExtentSparkReporter spark;
 
-    private  ExtentReport() {
+    private ExtentReport() {
     }
 
-    public static void initReport(){
+    public static void initReport() {
         if (Objects.isNull(extent)) {
             extent = new ExtentReports();
             spark = new ExtentSparkReporter(FrameWorkConstants.getExtentReportFilePath()).viewConfigurer()
@@ -39,12 +42,11 @@ public final class ExtentReport {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            extent.setSystemInfo("os", "Window10");
             extent.attachReporter(spark);
         }
     }
 
-    public static void flushReports(){
+    public static void flushReports() {
         if (Objects.nonNull(extent)) {
             try {
                 extent.flush();
@@ -56,10 +58,21 @@ public final class ExtentReport {
         }
     }
 
-    public static void createExtentTest(String testcasename){
-       ExtentTest test = extent.createTest(testcasename,"Started working on "+testcasename+"")
-               .assignAuthor(PropertyUtils.getValue(ConfigProperties.AUTHOR))
-               .assignDevice(PropertyUtils.getValue(ConfigProperties.BROWSER));
-       ExtentManager.setExtentTest(test);
+    public static void createExtentTest(String testcasename) {
+        ExtentTest test = extent.createTest(testcasename, "Started working on " + testcasename + "")
+                .assignAuthor(PropertyUtils.getValue(ConfigProperties.AUTHOR))
+                .assignDevice(PropertyUtils.getValue(ConfigProperties.BROWSER));
+        ExtentManager.setExtentTest(test);
+    }
+
+    public static void convertToPdf() {
+
+        try {
+            HtmlConverter.convertToPdf(new FileInputStream(FrameWorkConstants.getExtentReportFilePath()),
+                    new FileOutputStream(FrameWorkConstants.getPdfExtentReportPath()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("PDF Created!");
     }
 }

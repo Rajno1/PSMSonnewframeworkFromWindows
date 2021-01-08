@@ -2,11 +2,13 @@ package com.issi.listeners;
 
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.issi.constants.FrameWorkConstants;
 import com.issi.reports.EmailReportWithAttachment;
 import com.issi.reports.ExtentLogger;
 import com.issi.reports.ExtentReport;
 import org.testng.*;
 
+import java.io.File;
 import java.util.Arrays;
 
 public class listenerClass implements ITestListener, ISuiteListener {
@@ -18,7 +20,11 @@ public class listenerClass implements ITestListener, ISuiteListener {
     @Override
     public void onFinish(ISuite suite) {
         ExtentReport.flushReports();
-        EmailReportWithAttachment.mailTheReport();
+        ExtentReport.convertToPdf();
+     //   EmailReportWithAttachment.mailTheReport();
+
+//        new File(FrameWorkConstants.getExtentTReportPdfFolderPath()).getParentFile().mkdirs();
+   //     ExtentReport.convertToPdf(FrameWorkConstants.getPdfExtentReportPath());
     }
 
     @Override

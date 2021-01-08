@@ -1,3 +1,7 @@
 
 ]
-java:S1854";Remove this useless assignment to local variable "element".(’¢ÇÁþÿÿÿÿ8ž÷ç¹í.
+java:S1854H";Remove this useless assignment to local variable "element".(’¢ÇÁþÿÿÿÿ8á°”‘î.
+c
+java:S21422"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Þå´‘î.
+]
+java:S1854";Remove this useless assignment to local variable "element".(’¢ÇÁþÿÿÿÿ8²­ˆ‘î.

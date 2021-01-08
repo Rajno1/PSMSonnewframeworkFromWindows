@@ -9,7 +9,7 @@
 
     <test verbose="1" parallel="methods" preserve-order="true" name="Test">
         <classes>
-            <class name="com.issi.tests.HomePageTest"></class>
+            <class name="com.issi.tests.HomePageTest"/>
         </classes>
     </test>
 </suite>

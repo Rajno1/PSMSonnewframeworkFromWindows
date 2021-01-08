@@ -1,4 +1,7 @@
 
+o
+java:S2095G"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Ÿ¼´ûÿÿÿÿ8÷åŞçí.
 q
-java:S1450"TRemove the "spark" field and declare it as a local variable in the relevant methods.(Ë¡›8Ï¯”ì.
-X	java:S1254"<This block of commented-out lines of code should be removed.(ıİ»Æ8ØÏ›ì.
+java:S1450"TRemove the "spark" field and declare it as a local variable in the relevant methods.(Ë¡›8Ï¯”ì.
+U	java:S106L"9Replace this use of System.out or System.err by a logger.(ñ€—ä8Ş’Şçí.
+X	java:S1256"<This block of commented-out lines of code should be removed.(ıİ»Æ8ØÏ›ì.

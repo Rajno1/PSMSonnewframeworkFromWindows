@@ -8,14 +8,14 @@ import org.testng.annotations.BeforeMethod;
 
 import static com.issi.tests.LoginPageTest.loginTest;
 import static com.issi.tests.LoginPageTest.logoutTest;
-
+import static com.issi.driver.Driver.*;
 public class BaseTest {
     protected BaseTest() {
     }
 
     @BeforeClass
     protected void initDriver(){
-        Driver.launchDriver();
+        launchDriver();
     }
 
     @BeforeMethod
@@ -30,7 +30,7 @@ public class BaseTest {
 
     @AfterClass
     protected void tearDown(){
-        Driver.quiteDriver();
+        quiteDriver();
     }
 
 

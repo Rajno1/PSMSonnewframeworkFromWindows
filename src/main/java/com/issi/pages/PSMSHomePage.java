@@ -71,15 +71,12 @@ public final class PSMSHomePage extends BasePage {
     }
 
 
-
-
-
-
-
     public PSMSHomePage cickUserActions(){
+
         try {
             Thread.sleep(6000);
             clickOn(userActionsBtn,WaitStrategy.CLICKABLE," User actions");
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

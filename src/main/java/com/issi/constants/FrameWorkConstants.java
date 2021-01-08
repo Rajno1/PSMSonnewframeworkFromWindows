@@ -23,6 +23,13 @@ public final class FrameWorkConstants {
     private static final String EXCELPATH = TESTRESOURCESPATH + "/TestData/testdata.xlsx";
     private static final String CONFIGFILEPATH = TESTRESOURCESPATH + "/config/config.properties";
     private static final String EXTENTREPORTFOLDERPATH = System.getProperty("user.dir") + "/Extent-test-output/";
+
+
+    public static String getPdfExtentReportPath() {
+        return PDFEXTENTREPORTPATH;
+    }
+
+    private static final String PDFEXTENTREPORTPATH = System.getProperty("user.dir") + "/Extent-pdf-test-output/output.pdf";
     private static final String RUNMANAGERSHEET = "RunManager";
     private static final String ITERATIONDATASHEET = "TestData";
 
